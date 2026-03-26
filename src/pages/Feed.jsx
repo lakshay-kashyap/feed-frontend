@@ -4,12 +4,7 @@ import axios from 'axios';
 const Feed = ()=> {
     const API_URL = import.meta.env.VITE_API_URL;
 
-    const [posts, setposts] = useState([
-        {
-            image:"https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d",
-            caption:"A beautiful scenery"
-        }
-    ]);
+    const [posts, setposts] = useState([]);
 
     useEffect(()=>{
         axios.get(`${API_URL}/posts`)
