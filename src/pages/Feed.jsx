@@ -24,7 +24,7 @@ const Feed = ()=> {
                     <img src={post.image} alt={`Post ${index}`} />
                     <p>{post.caption}</p>
                     <button className='delete-btn' onClick={async()=>{
-                        await axios.delete(`${API_URL}/posts/${post._id}`)
+                        await axios.delete(`${API_URL}/delete-post/${post._id}`)
                         .then((res)=>{
                             alert(res.data.message)
                             setposts(posts.filter((p)=>p._id !== post._id))
