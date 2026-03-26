@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 
 const CreatePost = () => {
   const API_URL = import.meta.env.VITE_API_URL;
+  const navigate = useNavigate()
   const handleSubmit=async(e)=>{
     e.preventDefault();
     const formData=new FormData(e.target);
@@ -11,9 +12,7 @@ const CreatePost = () => {
     .then((res)=>{
       navigate("/feed")
     })
-    .catch((err)=>{
-      alert("Error creating post")
-    })
+    
   }
 
   return (
