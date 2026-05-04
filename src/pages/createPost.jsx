@@ -19,7 +19,7 @@ const CreatePost = () => {
     <section className='create-post'>
        <h1 className='createposth'>Create Post</h1>
        <form onSubmit={handleSubmit}>
-        <input type="file" name='image' accept='image/*' />
+          <input type="file" name='image' accept='image/*' capture='environment'   required/>
         <input type="text" name='caption' placeholder='Enter Caption' required/>
         <button>Create Post</button>
        </form>
