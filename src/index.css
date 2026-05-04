@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;   
   
+  
 }
 html, body, #root {
   height: 100%;
@@ -73,6 +74,9 @@ html{
   border: 1px solid rgb(255, 71, 10);
   width: 380px;
   box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .post h2{
   margin-bottom: 10px;
@@ -111,4 +115,34 @@ html{
 .CreatePostBtn a{
   color: white;
   text-decoration: none;
+}
+
+.media-buttons{
+  display: flex;
+  gap: 10px;
+  width: 300px; 
+}
+
+.media-buttons button{
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.post-image-wrapper {
+  width: 100%;
+  height: 220px;   /* keeps all cards equal */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.post-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

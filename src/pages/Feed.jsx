@@ -21,18 +21,22 @@ const Feed = ()=> {
          {posts.length > 0 ? (
             posts.map((post,index)=>(
                 <div key={index} className='post'>
-                    <img src={post.image} alt={`Post ${index}`} />
-                    <p>{post.caption}</p>
-                    <button className='delete-btn' onClick={async()=>{
-                        await axios.delete(`${API_URL}/delete-post/${post._id}`)
-                        .then((res)=>{
-                            alert(res.data.message)
-                            setposts(posts.filter((p)=>p._id !== post._id))
-                        })
-                    }}>
-                        Delete
-                    </button>
-                </div>
+            <div className="post-image-wrapper">
+                <img src={post.image} alt={`Post ${index}`} />
+            </div>
+
+            <p>{post.caption}</p>
+
+            <button className='delete-btn' onClick={async () => {
+                await axios.delete(`${API_URL}/delete-post/${post._id}`)
+                .then((res) => {
+                alert(res.data.message)
+                setposts(posts.filter((p) => p._id !== post._id))
+                })
+            }}>
+                Delete
+            </button>
+            </div>
             ))
          ) : (
             <p>No posts available.</p>
